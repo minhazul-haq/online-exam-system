@@ -1,0 +1,182 @@
+.menuStyle 
+{
+	font-size: 16px;
+	background-color:#666666;
+}
+
+.menuSelected 
+{
+	font-size: 16px;
+	background-color: #FFCC66;
+}
+
+
+/* search.php */
+.menuSearch
+{
+	background-color:#DBDBDB;		
+   	overflow: scroll;
+   	width: 120px;
+   	border: 1px black solid;
+}
+
+.buttonSearch
+{
+	border-style:none;
+	background-color:#FFFFFF;
+	background-image:url(images/searchButton.png);
+	height:48px;
+	width:48px;	
+}
+
+.buttonSearch:hover
+{
+	cursor:pointer;
+	border-style:none;
+	background-color:#FFFFFF;
+	background-image:url(images/searchButtonOver.png);
+	height:48px;
+	width:48px;	
+}
+
+body 
+{
+	background-color: #999966;
+}
+
+
+/* login.php */
+
+.loginText 
+{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: normal;
+	color: #000000;
+	font-weight: normal;
+}
+
+.loginTextField 
+{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: normal;
+	color: #000000;
+	font-weight: normal;
+	border: thin solid #666666;
+	background-color: #F2F2F2;
+}
+
+.loginBackGround
+{
+	background-color: #D7D7D7;
+	border: thin solid #666666;
+
+}
+.adminInfo {
+	font-size: 12pt;
+	color: #000000;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+/* css for link style */
+
+a:link /* unvisited link */
+{
+	font-size:40px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#FFFFFF;
+	text-decoration:none;
+}   
+
+a:visited /* visited link */
+{
+	font-size:40px;		
+	color:#FFFFFF;
+	text-decoration:none;
+} 
+
+a:hover /* mouse over link */
+{
+	font-size:40px;	
+	color:#003399;
+	text-decoration:none;
+}   
+
+a:active /* selected link */
+{
+	font-size:40px;	
+	color:#003399;
+	text-decoration:none;
+} 
+
+
+/* css for menu style */
+
+#menu 
+{
+	position: absolute;
+	margin: 0 auto;
+	/*left: 192px;
+	line-height: 20px;
+	z-index: 99;
+	top: 170px;*/
+	width: 896px;
+}
+
+#menu *  
+{ 
+	padding:0px; 
+	margin: 0px; 
+	font: 1em arial; 
+}
+
+/* menu normal */
+#menu a 
+{ 
+	color:#FFFFFF;
+	background-color:#484848;
+	display: block; 
+	border: 1px solid #666666;  
+	text-decoration: none; 
+	padding: 2px 2px; 
+}
+
+/* when mouseOver an item */
+#menu li a:hover 
+{ 
+	background-color:#999999;
+}
+
+/* menu item, menu item->item normal */
+#menu ul li, #menu ul li ul li  
+{ 
+	width: 179px; 
+	list-style-type:none; 
+	float: left; 
+}
+
+/* menu item mouseOver,menu item->item mouseOver */
+#menu ul li ul, #menu:hover ul li ul
+{
+	display:none;
+	list-style-type:none; 
+}
+
+/* menu item mouseOver */
+#menu:hover ul li:hover ul
+{
+	display:block; 
+}.body {
+	background-color: #666666;
+}
+
+
+/* student.php */
+
+.tableBackground 
+{
+	background-color: #FFFFFF;
+	border: thin solid #333333;
+}

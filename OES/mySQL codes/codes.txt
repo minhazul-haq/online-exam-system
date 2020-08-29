@@ -1,0 +1,10 @@
+CREATE TABLE `Online_Exam_System`.`Admin` (
+`admin_id` VARCHAR( 8 ) NOT NULL ,
+`name` VARCHAR( 50 ) NOT NULL ,
+`address` VARCHAR( 100 ) NOT NULL ,
+`email` VARCHAR( 50 ) NOT NULL ,
+`mobile_no` VARCHAR( 50 ) NOT NULL ,
+`profile_picture` BLOB NOT NULL ,
+`registered_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY ( `admin_id` )
+) ENGINE = MYISAM ;

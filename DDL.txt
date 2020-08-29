@@ -1,0 +1,109 @@
+create table Admin
+(
+	admin_id varchar(8) primary key,
+	name varchar(50),
+	address varchar(100),
+	email varchar(50),
+	mobile_no varchar(50),
+	profile_picture blob,
+	registered_on date
+);
+
+create table Teacher
+(
+	teacher_id varchar(8) primary key,
+	name varchar(50),
+	department varchar(7) references Department,
+	designation varchar(50),
+	address varchar(100),
+	email varchar(50),
+	mobile_no varchar(50),
+	profile_picture blob,
+	id_card_scanned blob,
+	is_registered number(1)
+	registered_on date
+);
+
+create table Student
+(
+	student_id varchar(8) primary key,
+	name varchar(50),
+	department varchar(7) references Department,
+	roll varchar(10),
+	level number(1),
+	term number(1),
+	session varchar(15),
+	sex char(1) default '?',
+	dob date,
+	address varchar(100),
+	email varchar(50),
+	mobile_no varchar(50),
+	profile_picture blob, 
+	id_card_scanned blob,
+	is_registered number(1) default 0,
+	registered_on date,
+	is_validity_expired number(1) default 0
+);
+
+create table Login
+(
+	used_id varchar(8),
+	user_name varchar(10),
+	password varchar(10),
+	is_logged_in number(1),
+	primary key(user_name,password),
+	foreign key user_id references Admin(admin_id),
+	Teacher(teacher_id),Student(student_id)
+);
+
+create table Credit_card_info
+(
+	credit_card_serial varchar(20) primary key,
+	credit_card_pin varchar(10),
+	total_money_on_card number(10)
+);
+
+create table Package_offer
+(
+	package_id varchar(8) primary key,
+	package_name varchar(50),
+	registration_fee number(5),
+	valid_for_days number(3),
+	vat number(4,2),
+	total_fee number(5)		
+);
+
+create table Money_transactions
+(
+	transaction_id varchar(8) primary key,
+	credit_card_serial varchar(20) references Credit_card_info,
+	student_id varchar(8) references Student,
+	transaction_type varchar(20),
+	transacted_money number(5),
+	is_transacted number(1) default 0,
+	package_id varchar(8) references Package_offer,
+	transaction_date_time timestamp
+);
+
+create table Scholarship
+(
+	scholarship_id varchar(8) primary key,
+	scholarship_name varchar(50),
+	required_cgpa number(3,2),
+	scholarship_amount number(5)
+);
+
+create table Scholarship_for_dept
+(
+	scholarship_id varchar(8) references Scholarship,
+	dept_id varchar(8) references Department,
+	primary key(scholarship_id,dept_id)
+);
+
+create table Obtained_scholarship
+(
+	student_id varchar(8) references Student,
+	session varchar(15),
+	scholarship_id varchar(8) references Scholarship,
+	is_transacted number(1) default 0
+);
